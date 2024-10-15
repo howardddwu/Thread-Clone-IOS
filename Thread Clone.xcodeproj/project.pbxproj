@@ -29,20 +29,51 @@
 		AC0D72C62CAB979000AF4D17 /* Thread CloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Thread CloneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AC0D730A2CAB985300AF4D17 /* Exceptions for "Thread Clone" folder in "Thread Clone" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				App/Thread_CloneApp.swift,
+				Assets.xcassets,
+				Core/Activity/View/ActivityView.swift,
+				Core/Authentication/Views/LoginView.swift,
+				Core/Authentication/Views/RegistrationView.swift,
+				Core/Components/CircularProfileView.swift,
+				Core/Components/UserCell.swift,
+				Core/Explore/View/ExploreView.swift,
+				Core/Feed/View/FeedView.swift,
+				Core/Feed/View/ThreadCell.swift,
+				Core/Profile/Model/ProfileThreadFilter.swift,
+				Core/Profile/View/ProfileView.swift,
+				Core/Root/ContentView.swift,
+				Core/TabBar/ThreadsTabView.swift,
+				Core/ThreadCreation/View/CreateThreadView.swift,
+				"Preview Content/Preview Assets.xcassets",
+				Utils/ViewModifers/ThreadsLogInButtonModifier.swift,
+				Utils/ViewModifers/ThreadsTextFieldModifier.swift,
+			);
+			target = AC0D72AB2CAB978E00AF4D17 /* Thread Clone */;
+		};
+		AC0D730B2CAB985300AF4D17 /* Exceptions for "Thread Clone" folder in "Thread CloneUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				App/Thread_CloneApp.swift,
+				Assets.xcassets,
+				Core/Root/ContentView.swift,
+				"Preview Content/Preview Assets.xcassets",
+			);
+			target = AC0D72C52CAB979000AF4D17 /* Thread CloneUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AC0D72AE2CAB978E00AF4D17 /* Thread Clone */ = {
+		AC0D73052CAB985300AF4D17 /* Thread Clone */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AC0D730A2CAB985300AF4D17 /* Exceptions for "Thread Clone" folder in "Thread Clone" target */,
+				AC0D730B2CAB985300AF4D17 /* Exceptions for "Thread Clone" folder in "Thread CloneUITests" target */,
+			);
 			path = "Thread Clone";
-			sourceTree = "<group>";
-		};
-		AC0D72BF2CAB979000AF4D17 /* Thread CloneTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Thread CloneTests";
-			sourceTree = "<group>";
-		};
-		AC0D72C92CAB979000AF4D17 /* Thread CloneUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Thread CloneUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +106,7 @@
 		AC0D72A32CAB978E00AF4D17 = {
 			isa = PBXGroup;
 			children = (
-				AC0D72AE2CAB978E00AF4D17 /* Thread Clone */,
-				AC0D72BF2CAB979000AF4D17 /* Thread CloneTests */,
-				AC0D72C92CAB979000AF4D17 /* Thread CloneUITests */,
+				AC0D73052CAB985300AF4D17 /* Thread Clone */,
 				AC0D72AD2CAB978E00AF4D17 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,9 +136,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				AC0D72AE2CAB978E00AF4D17 /* Thread Clone */,
-			);
 			name = "Thread Clone";
 			packageProductDependencies = (
 			);
@@ -129,9 +155,6 @@
 			);
 			dependencies = (
 				AC0D72BE2CAB979000AF4D17 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				AC0D72BF2CAB979000AF4D17 /* Thread CloneTests */,
 			);
 			name = "Thread CloneTests";
 			packageProductDependencies = (
@@ -154,7 +177,7 @@
 				AC0D72C82CAB979000AF4D17 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				AC0D72C92CAB979000AF4D17 /* Thread CloneUITests */,
+				AC0D73052CAB985300AF4D17 /* Thread Clone */,
 			);
 			name = "Thread CloneUITests";
 			packageProductDependencies = (

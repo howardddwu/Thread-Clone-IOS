@@ -9,7 +9,32 @@ import SwiftUI
 
 struct UserCell: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            CircularProfileView()
+            VStack(alignment: .leading) {
+                Text("Kaola")
+                    .fontWeight(.semibold)
+                Text("Hi, I am an animal!")
+            }
+            .font(.footnote)
+
+            Spacer()
+
+            Button {
+                print("following or now")
+            } label: {
+                Text("Follow")
+                    .font(.subheadline)
+                    .foregroundColor(.black)
+                    .fontWeight(.semibold)
+                    .frame(width: 100, height: 32)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color(.systemGray4), lineWidth: 1)
+                    }
+            }
+        }
+        .padding(.horizontal)
     }
 }
 
