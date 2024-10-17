@@ -43,6 +43,7 @@
 				Core/Explore/View/ExploreView.swift,
 				Core/Feed/View/FeedView.swift,
 				Core/Feed/View/ThreadCell.swift,
+				Core/Profile/EditProfile/View/EditProfileView.swift,
 				Core/Profile/Model/ProfileThreadFilter.swift,
 				Core/Profile/View/ProfileView.swift,
 				Core/Root/ContentView.swift,

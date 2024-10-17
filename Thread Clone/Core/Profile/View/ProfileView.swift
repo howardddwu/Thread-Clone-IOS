@@ -28,7 +28,7 @@ struct ProfileView: View {
                                 .font(.title2)
                                 .fontWeight(.semibold)
 
-                            Text("Hi, my name is Hoawrd. I love playing video games during my free time!")
+                            Text("Hi, my name is Howard. I love playing video games during my free time!")
                                 .font(.subheadline)
                         }
                         Text("Cats are evil...")
