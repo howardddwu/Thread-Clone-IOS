@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AC59E3E42CC4C5FE004BCE1A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AC59E3E32CC4C5FE004BCE1A /* FirebaseAuth */; };
+		AC59E3E62CC4C5FE004BCE1A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AC59E3E52CC4C5FE004BCE1A /* FirebaseFirestore */; };
+		AC59E3E82CC4C5FE004BCE1A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AC59E3E72CC4C5FE004BCE1A /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		AC0D72BD2CAB979000AF4D17 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -36,20 +42,33 @@
 				App/Thread_CloneApp.swift,
 				Assets.xcassets,
 				Core/Activity/View/ActivityView.swift,
+				Core/Authentication/Service/AuthService.swift,
+				Core/Authentication/ViewModel/LoginViewModel.swift,
+				Core/Authentication/ViewModel/RegistrationViewModel.swift,
 				Core/Authentication/Views/LoginView.swift,
 				Core/Authentication/Views/RegistrationView.swift,
 				Core/Components/CircularProfileView.swift,
 				Core/Components/UserCell.swift,
 				Core/Explore/View/ExploreView.swift,
+				Core/Explore/ViewModel/ExploreViewModel.swift,
 				Core/Feed/View/FeedView.swift,
 				Core/Feed/View/ThreadCell.swift,
+				Core/Profile/Component/ProfileHeaderView.swift,
+				Core/Profile/Component/UserContentListView.swift,
+				Core/Profile/CurrentUserProfile/View/CurrentUserProfileView.swift,
+				Core/Profile/CurrentUserProfile/ViewModel/CurrentUserProfileViewModel.swift,
 				Core/Profile/EditProfile/View/EditProfileView.swift,
 				Core/Profile/Model/ProfileThreadFilter.swift,
-				Core/Profile/View/ProfileView.swift,
-				Core/Root/ContentView.swift,
+				Core/Profile/UserProfile/ProfileView.swift,
+				Core/Root/View/ContentView.swift,
+				Core/Root/ViewModel/ContentViewModel.swift,
 				Core/TabBar/ThreadsTabView.swift,
 				Core/ThreadCreation/View/CreateThreadView.swift,
+				Extensions/PreviewProvider.swift,
+				"GoogleService-Info.plist",
+				Model/User.swift,
 				"Preview Content/Preview Assets.xcassets",
+				Services/UserService.swift,
 				Utils/ViewModifers/ThreadsLogInButtonModifier.swift,
 				Utils/ViewModifers/ThreadsTextFieldModifier.swift,
 			);
@@ -60,7 +79,8 @@
 			membershipExceptions = (
 				App/Thread_CloneApp.swift,
 				Assets.xcassets,
-				Core/Root/ContentView.swift,
+				Core/Root/View/ContentView.swift,
+				"GoogleService-Info.plist",
 				"Preview Content/Preview Assets.xcassets",
 			);
 			target = AC0D72C52CAB979000AF4D17 /* Thread CloneUITests */;
@@ -84,6 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC59E3E42CC4C5FE004BCE1A /* FirebaseAuth in Frameworks */,
+				AC59E3E62CC4C5FE004BCE1A /* FirebaseFirestore in Frameworks */,
+				AC59E3E82CC4C5FE004BCE1A /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +162,9 @@
 			);
 			name = "Thread Clone";
 			packageProductDependencies = (
+				AC59E3E32CC4C5FE004BCE1A /* FirebaseAuth */,
+				AC59E3E52CC4C5FE004BCE1A /* FirebaseFirestore */,
+				AC59E3E72CC4C5FE004BCE1A /* FirebaseStorage */,
 			);
 			productName = "Thread Clone";
 			productReference = AC0D72AC2CAB978E00AF4D17 /* Thread Clone.app */;
@@ -219,6 +245,9 @@
 			);
 			mainGroup = AC0D72A32CAB978E00AF4D17;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AC59E3E22CC4C5FE004BCE1A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AC0D72AD2CAB978E00AF4D17 /* Products */;
 			projectDirPath = "";
@@ -582,6 +611,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC59E3E22CC4C5FE004BCE1A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC59E3E32CC4C5FE004BCE1A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC59E3E22CC4C5FE004BCE1A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AC59E3E52CC4C5FE004BCE1A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC59E3E22CC4C5FE004BCE1A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		AC59E3E72CC4C5FE004BCE1A /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC59E3E22CC4C5FE004BCE1A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AC0D72A42CAB978E00AF4D17 /* Project object */;
 }
