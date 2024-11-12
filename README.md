@@ -35,7 +35,7 @@
 - **Dark Mode Support**: Adapts seamlessly to light and dark modes.
 
 ---
-## Technologies
+## Technology
 **Programming Language**: Swift
 **UI Framework**: SwiftUI
 **Networking**: URLSession
