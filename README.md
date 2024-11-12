@@ -74,7 +74,7 @@ open ThreadClone.xcodeproj
 2. Select your target device or simulator
 3. Build and run the app
 
-## Installation
+## Usage
 1. **Run the App**: Open the project in Xcode and run it on a simulator or physical device.
 2. **Explore Features**: Create posts, browse the feed, interact with posts, and switch to dark mode to see the full UI.
 
