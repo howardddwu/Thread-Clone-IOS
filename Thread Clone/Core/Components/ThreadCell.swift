@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct ThreadCell: View {
+    let thread: Thread
     @ScaledMetric private var buttonsSizeWidthHeight: CGFloat = 20
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 12) {
-                CircularProfileView()
+                CircularProfileView(user: thread.user)
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(spacing: 5) {
-                        Text("Name of the user")
+                        Text(thread.user?.username ?? "")
                             .font(.footnote)
                             .fontWeight(.semibold)
                         Spacer()
-                        Text("10m")
+                        Text(thread.timestamp.timestampString())
                             .font(.caption)
                             .foregroundColor(Color(.systemGray3))
 
@@ -28,7 +29,7 @@ struct ThreadCell: View {
                         }
                         .padding(.trailing, 5)
                     }
-                    Text("Content of the thread")
+                    Text(thread.caption)
                         .font(.footnote)
                         .multilineTextAlignment(.leading)
 
@@ -65,5 +66,6 @@ struct ThreadCell: View {
 }
 
 #Preview {
-    ThreadCell()
+    let dev = DeveloperPreview.shared.thread
+    ThreadCell(thread: dev)
 }

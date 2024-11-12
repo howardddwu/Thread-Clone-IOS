@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
     @StateObject var viewModel = CurrentUserProfileViewModel()
+    @State private var showEditProfile = false
 
     // this allows me to call currentUser without typing viewModel everytime
     private var currentUser: User? {
@@ -21,7 +22,7 @@ struct CurrentUserProfileView: View {
                 VStack(spacing: 20) {
                     ProfileHeaderView(user: currentUser)
                     Button {
-                        print("clicking edit")
+                        showEditProfile.toggle()
                     } label: {
                         Text("Edit Profile")
                             .font(.subheadline)
@@ -37,9 +38,16 @@ struct CurrentUserProfileView: View {
                     }
 
                     // User content list view
-                    UserContentListView()
+                    if let user = currentUser {
+                        UserContentListView(user: user)
+                    }
                 }
             }
+            .sheet(isPresented: $showEditProfile, content: {
+                if let user = currentUser {
+                    EditProfileView(user: user)
+                }
+            })
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Log Out") {

@@ -11,7 +11,7 @@ struct UserCell: View {
     let user: User
     var body: some View {
         HStack {
-            CircularProfileView()
+            CircularProfileView(user: user)
             VStack(alignment: .leading, spacing: 2) {
                 Text(user.username)
                     .fontWeight(.semibold)
@@ -39,11 +39,11 @@ struct UserCell: View {
     }
 }
 
-//struct UserCell_Previews: PreviewProvider {
+// struct UserCell_Previews: PreviewProvider {
 //    static var previews: some View {
 //        UserCell(user: dev.user)
 //    }
-//}
+// }
 #Preview {
     let dev = DeveloperPreview.shared
     return UserCell(user: dev.user)

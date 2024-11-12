@@ -5,12 +5,17 @@
 //  Created by Howard Wu on 10/15/24.
 //
 
+import PhotosUI
 import SwiftUI
 
 struct EditProfileView: View {
+    let user: User
     @State private var bio = ""
     @State private var link = ""
     @State private var isPrivateProfile = false
+    @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel = EditProfileViewModel()
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -25,10 +30,20 @@ struct EditProfileView: View {
                         VStack(alignment: .leading) {
                             Text("Name")
                                 .fontWeight(.semibold)
-                            Text("Howard Wu")
+                            Text(user.fullname)
                         }
                         Spacer()
-                        CircularProfileView()
+                        PhotosPicker(selection: $viewModel.selectedItem) {
+                            if let image = viewModel.profileImage {
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } else {
+                                CircularProfileView(user: user)
+                            }
+                        }
                     }
 
                     Divider()
@@ -71,14 +86,21 @@ struct EditProfileView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {}
-                        .font(.subheadline)
-                        .foregroundColor(.black)
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.black)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {}
-                        .font(.subheadline)
-                        .foregroundColor(.black)
+                    Button("Done") {
+                        Task { try await viewModel.updateUserData() }
+                        dismiss()
+                    }
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.black)
                 }
             }
         }
@@ -86,5 +108,6 @@ struct EditProfileView: View {
 }
 
 #Preview {
-    EditProfileView()
+    let dev = DeveloperPreview().user
+    EditProfileView(user: dev)
 }

@@ -5,9 +5,10 @@
 //  Created by Howard Wu on 10/23/24.
 //
 
-import Foundation
-
 import Combine
+import Foundation
+import PhotosUI
+import SwiftUI
 
 // ProfileViewModel conforms to ObservableObject, alling SwiftUI views to observe it
 class CurrentUserProfileViewModel: ObservableObject {
