@@ -10,8 +10,6 @@
 3. [Requirements](#requirements)
 4. [Installation](#installation)
 5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
 
 ---
 
@@ -45,3 +43,10 @@
 ```bash
 git clone https://github.com/yourusername/thread-clone-ios.git
 cd thread-clone-ios
+
+## Usage
+
+1. **Run the App**: Open the project in Xcode and run it on a simulator or physical device.
+2. **Explore Features**: Create posts, browse the feed, interact with posts, and switch to dark mode to see the full UI.
+
+
